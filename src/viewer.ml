@@ -237,7 +237,7 @@ let draw ui matrix t =
                 ; S b_or_w
                 ; S "  "
                 ; S key
-                ; S (String.init (cols - 23 - (String.length key)) (fun _ -> ' '))
+                ; S (String.init (max (cols - 23 - (String.length key)) 0) (fun _ -> ' '))
                 ; E_reverse
                 ]);
         loop (row + 1) tl
