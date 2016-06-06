@@ -7,4 +7,5 @@ true:   package(lwt)
 true:   package(conduit)
 true:   package(lambda-term)
 true:   package(spacetime_lib)
+<bin/*sturgeon*>:   package(sturgeon,sturgeon.recipes_command)
 true:   bin_annot
