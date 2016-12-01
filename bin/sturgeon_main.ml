@@ -141,11 +141,10 @@ let unmarshal_profile file : Spacetime_lib.Series.t =
 
 let () =
   Sturgeon_recipes_command.text_command @@ fun ~args:_ shell ->
-  Stui.read_file_name shell
-    ~prompt:"Open spacetime profile (spacetime-*): " @@
-  function
-  | Session.Quit _ -> ()
-  | Session.Feed filename ->
+  let prompt = "Open spacetime profile (spacetime-*): " in
+  Stui.read_file_name shell ~prompt @@ function
+  | Error _ -> ()
+  | Ok filename ->
     let name =
       match Filename.basename filename with
       | exception _ -> "spacetime"
