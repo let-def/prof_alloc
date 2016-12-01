@@ -49,6 +49,18 @@ To view a spacetime profile in the terminal use the `view` command:
 
     prof_spacetime view -e foo.exe spacetime-1234
 
+## Viewing profiles in emacs (sturgeon)
+
+To view a spacetime profile in emacs, first install sturgeon
+
+    opam install sturgeon
+
+and setup sturgeon-mode.  Then:
+
+    M-x sturgeon-launch prof_spacetime_sturgeon
+
+and select spacetime profile prompted.
+
 ## Preprocessing spacetime profiles
 
 Processing a spacetime profile can take a while. To avoid redoing this
